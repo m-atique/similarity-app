@@ -8,7 +8,7 @@ const pragraghVeriants = cva(
   {
     variants: {
       size: {
-        default: "text-basesm:text-lg",
+        default: "text-base sm:text-lg",
         sm: "text-base",
       },
       default: {
