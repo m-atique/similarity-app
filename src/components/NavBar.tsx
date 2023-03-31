@@ -3,6 +3,7 @@ import Link from "next/link"
 
 //---------------------------importing components
 import { buttonVariants } from "./ui/Button"
+import { SingInButton } from "@/components/SingInButton"
 
 const  NavBar = async({})=> {
     const session =  await getServerSession()
@@ -32,7 +33,7 @@ const  NavBar = async({})=> {
                         </>
 
                     ):(
-                   <SignInButton />
+                   <SingInButton />
                     )    
                 }
                 </div>
