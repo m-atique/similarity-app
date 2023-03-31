@@ -3,7 +3,7 @@ import { ButtonHTMLAttributes, FC,forwardRef } from "react"
 import { cn } from "../lib/utils"
 import {Loader2} from 'lucide-react'
 
-const buttonVariants = cva(
+export const buttonVariants = cva(
 'active:scale-95 inline-flex itemcenter justify-center rounded-md text-sm font-medium transition-color focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 dark:focus:ring-slate-400 disabled:pointer-events-none',
 {
     variants:{
@@ -45,5 +45,5 @@ const Button : FC<ButtonProps>=forwardRef<HTMLButtonElement, ButtonProps>(
         )
     }
 )
-
+Button.displayName = 'Button'
 export default Button
