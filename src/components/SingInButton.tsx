@@ -1,6 +1,8 @@
+"use client"
 import {FC,useState} from 'react'
 import Button from "@/ui/Button";
 import { signIn } from 'next-auth/react';
+import { toast } from './ui/toast';
 
 interface SignInProps {}
 
@@ -15,8 +17,8 @@ export const SingInButton:FC<SignInProps> = () => {
         } catch (error) {
             toast({
                 title:' Signing In Error',
-                meaddage:'Please Try Again ',
-                type:error
+                message: 'Please try again later.',
+                type: 'error',
             }
             )
         }

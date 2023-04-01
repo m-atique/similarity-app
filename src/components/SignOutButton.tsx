@@ -1,11 +1,13 @@
+"use client"
 import {FC,useState} from 'react'
 import Button from "@/ui/Button";
 import { signOut } from 'next-auth/react';
+import { toast } from './ui/toast';
 
 interface SignOutProps {}
 
 
-export const SingInButton:FC<SignOutProps> = () => {
+export const SingOutButton:FC<SignOutProps> = () => {
     const [isLoading, setIsLoading] =useState<boolean>(false)
 //--------------------------------------------sign in google
     const SignOutWithgoogle = async()=>{
@@ -15,8 +17,8 @@ export const SingInButton:FC<SignOutProps> = () => {
         } catch (error) {
             toast({
                 title:' SignOut Error',
-                meaddage:'Please Try Again ',
-                type:error
+                message: 'Please try again later.',
+                type: 'error',
             }
             )
         }
