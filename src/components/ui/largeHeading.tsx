@@ -1,45 +1,39 @@
-import { HTMLAttributes,forwardRef } from "react";
-import { VariantProps,cva } from "class-variance-authority";
-import {cn} from '../lib/utils'
+import { FC } from 'react'
 
+import { cn } from '../lib/utils'
+import { cva, VariantProps } from 'class-variance-authority'
 
 const headingVariants = cva(
-    'text-black dark:text-white text-center font-extrabold leading-tight tracking-tight',
-    {
- variants:{
-    size:{
-        default:'text-4xl md:text-5xl lg:text-6xl',
-        sm:'text-2xl md:text-3xl lg:text-4xl',
-        lg:'text-5xl md:text-6xl lg:text-7xl',
+  'text-black dark:text-white text-center lg:text-left font-extrabold leading-tight tracking-tighter',
+  {
+    variants: {
+      size: {
+        default: 'text-4xl md:text-5xl lg:text-6xl',
+        lg: 'text-5xl md:text-6xl lg:text-7xl',
+        sm: 'text-2xl md:text-3xl lg:text-4xl',
+      },
     },
-    default:{
-        size:'default'
-    }
-
- }
-}  
+    defaultVariants: {
+      size: 'default',
+    },
+  }
 )
 
-//-------------interface
-
 interface LargeHeadingProps
-extends HTMLAttributes<HTMLHeadElement>,VariantProps<typeof headingVariants>{}
+  extends React.HTMLAttributes<HTMLHeadingElement>,
+    VariantProps<typeof headingVariants> {}
 
-//-----------component
-const Pragragh = forwardRef<HTMLHeadingElement, LargeHeadingProps>(
-    ({ className, size, children, ...props }, ref) => {
-      return (
-        <p 
-        ref={ref}
-        {...props}
-        className={cn(headingVariants({size,className}))} >
-          {children}
-        </p>
-      );
-    }
-  );
+const LargeHeading: FC<LargeHeadingProps> = ({
+  children,
+  className,
+  size,
+  ...props
+}) => {
+  return (
+    <h1 {...props} className={cn(headingVariants({ size, className }))}>
+      {children}
+    </h1>
+  )
+}
 
-  Pragragh.displayName= 'Heading'
-
-  export default Pragragh
-
+export default LargeHeading

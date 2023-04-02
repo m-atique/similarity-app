@@ -3,20 +3,20 @@ import { VariantProps, cva } from "class-variance-authority";
 import { cn } from "../lib/utils";
 
 //----this code will create variants of paragragh
-const pragraghVeriants = cva(
-  "max-w-prose text-center text-slate-700 dar:text-slate-300  mb-2",
+export const paragraphVariants = cva(
+  'max-w-prose text-slate-700 dark:text-slate-300 mb-2 text-center',
   {
     variants: {
       size: {
-        default: "text-base sm:text-lg",
-        sm: "text-base",
-      },
-      default: {
-        size: "default",
+        default: 'text-base sm:text-lg',
+        sm: 'text-sm sm:text-base',
       },
     },
+    defaultVariants: {
+      size: 'default',
+    },
   }
-);
+)
 
 //---------------------------------paragragh interface
 
@@ -24,24 +24,25 @@ const pragraghVeriants = cva(
  and its variants as a type of prghraghvarants
  */
 
-interface PragraghProp
-  extends HTMLAttributes<HTMLParagraphElement>,
-    VariantProps<typeof pragraghVeriants> {}
-
+ interface ParagraphProps
+ extends React.HTMLAttributes<HTMLParagraphElement>,
+   VariantProps<typeof paragraphVariants> {}
 //-------------------------------------------component
 /** here we are using farwardref from react to use refrences
  * its helpfull in use of this component if we use ref in rendering   then that will lead us to this component*/
-const Pragragh = forwardRef<HTMLParagraphElement, PragraghProp>(
+const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(
   ({ className, size, children, ...props }, ref) => {
     return (
-      <p 
-      ref={ref}
-      {...props}
-      className={cn(pragraghVeriants({size,className}))} >
+      <p
+        ref={ref}
+        {...props}
+        className={cn(paragraphVariants({ size, className }))}>
         {children}
       </p>
-    );
+    )
   }
-);
-Pragragh.displayName='Pragragh'  // just for debuging purpose
-export default Pragragh;
+)
+
+Paragraph.displayName = 'Paragraph'
+
+export default Paragraph
