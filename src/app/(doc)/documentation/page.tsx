@@ -2,6 +2,8 @@ import {FC} from 'react';
 import type { Metadata } from 'next';
 import LargeHeading from '@/ui/largeHeading';
 import Paragraph from '@/components/ui/paragragh';
+import DocumentationTabs from '@/components/DocumentationTabs';
+import 'simplebar-react/dist/simplebar.min.css'
 
 const metadata:Metadata ={
     title:'Similarity api | Documentation',
@@ -10,15 +12,16 @@ const metadata:Metadata ={
 
 
 const page:FC = ({})=>{
-return<div className = 'container max-w-7xl mx-auto mt-12'>
-   <div className="flex flex-col items-center gap-6">
-    <LargeHeading>
-        Making request
-    </LargeHeading>
-    <Paragraph> api/v1/similarity</Paragraph>
-   </div>
+return  (
+    <div className='container max-w-7xl mx-auto mt-12'>
+      <div className='flex flex-col items-center gap-6'>
+        <LargeHeading>Making a request</LargeHeading>
+        <Paragraph>api/v1/similarity</Paragraph>
 
-</div>
+        <DocumentationTabs />
+      </div>
+    </div>
+  )
 }
 
 export default page
