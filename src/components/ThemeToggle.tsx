@@ -29,11 +29,11 @@ export const ThemeToggle:FC<ThemeTogleProps> = () => {
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" forceMount>
             <DropdownMenuItem onClick={()=>setTheme('light')}>
-                <Icons.Sun className="mr-2 h-4 w-4"/>
+                <Icons.Sun className="mr-2 h-4 w-4 "/>
                 <span>Light</span>
             </DropdownMenuItem>
             <DropdownMenuItem onClick={()=>setTheme('dark')}>
-                <Icons.Moon className="mr-2 h-4 w-4"/>
+                <Icons.Moon className="mt-2 mr-2 h-4 w-4"/>
                 <span>Dark</span>
             </DropdownMenuItem>
             <DropdownMenuItem onClick={()=>setTheme('system')}>
