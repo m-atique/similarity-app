@@ -6,8 +6,9 @@ import { buttonVariants } from "./ui/Button"
 import { SingInButton } from "@/components/SingInButton"
 import { SingOutButton } from "@/components/SignOutButton"
 import { ThemeToggle } from "./ThemeToggle"
+import { authOptions } from "@/lib/auth"
 const  NavBar = async({})=> {
-    const session =  await getServerSession()
+    const session =  await getServerSession(authOptions)
     return (
         <div className="z-50 flex items-center justify-between bg-white/75 dark:bg-slate-900 backdrop-blur-sm shadow-sm dark:shadow-slate-700 border-b border-slate-300 dark:border-slate-900 fixed h-20 left-0 right-0 top-0 ">
             <div className="container flex item-center justify-between max-w-7xl w-full mx-auto ">

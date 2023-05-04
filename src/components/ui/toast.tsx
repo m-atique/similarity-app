@@ -1,7 +1,7 @@
 'use client'
 
 import Icons  from '@/ui/Icons'
-import { cn } from '../lib/utils'
+import { cn } from '../../lib/utils'
 import * as React from 'react'
 import hotToast, { Toaster as HotToaster } from 'react-hot-toast'
 

@@ -1,5 +1,5 @@
 import '@/styles/globals.css'
-import { cn } from '@/components/lib/utils'
+import { cn } from '@/lib/utils'
 import { Inter } from 'next/font/google'
 import Providers from '@/components/Providers'
 import NavBar from '@/components/NavBar'
